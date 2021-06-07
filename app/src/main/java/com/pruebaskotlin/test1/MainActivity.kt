@@ -1,5 +1,6 @@
 package com.pruebaskotlin.test1
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         clickLogin.setOnClickListener {
             if (checkVacio()) { //Si false, o login false o vacio, pero vacio enseña error
-                
+                val intent = Intent(this, PrincipalActivity::class.java)
             }
         }
     }
