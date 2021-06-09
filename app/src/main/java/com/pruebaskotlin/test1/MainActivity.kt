@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.pruebaskotlin.test1.databinding.ActivityMainBinding
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,15 @@ class MainActivity : AppCompatActivity() {
                 val i = Intent(this, PrincipalActivity::class.java)
                 startActivity(i)
             }
+        }
+
+        binding.btnCrearCuenta.setOnClickListener {
+
+        }
+
+        binding.btnPswd.setOnClickListener {
+            val i = Intent(this,PasswordActivity::class.java)
+            startActivity(i)
         }
     }
 
