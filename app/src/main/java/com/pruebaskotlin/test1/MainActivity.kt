@@ -4,16 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.pruebaskotlin.test1.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    var n:Boolean = false
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        clickLogin.setOnClickListener {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.clickLogin.setOnClickListener {
             if (checkVacio()) { //Si false, o login false o vacio, pero vacio enseña error
-                val intent = Intent(this, PrincipalActivity::class.java)
+                val i = Intent(this, PrincipalActivity::class.java)
+                startActivity(i)
             }
         }
     }
@@ -33,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             showErrorEmpty()
             false
         } else {
-            login(user.toString(), password.toString())
+            login(user.text.toString(), password.text.toString())
         }
 
     }
