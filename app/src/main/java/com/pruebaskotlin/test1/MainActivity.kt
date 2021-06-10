@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnCrearCuenta.setOnClickListener {
-
+            val i = Intent(this, RegisterActivity::class.java)
+            startActivity(i)
         }
 
         binding.btnPswd.setOnClickListener {
