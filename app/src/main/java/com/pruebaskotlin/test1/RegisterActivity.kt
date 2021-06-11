@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pruebaskotlin.test1.databinding.ActivityRegisterBinding
+import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -17,6 +18,13 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnCancelar.setOnClickListener {
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
+        }
+
+        binding.btnCrearCuentaNueva.setOnClickListener {
+            var n = Date(12-12-12)
+            var p:persona = persona("Rafa","esto",n, true,"oj@ok.com","rafa","rafa")
+
+            binding.nombrePersona.setText(p.getNombre()) //funciona :)
         }
     }
 }
